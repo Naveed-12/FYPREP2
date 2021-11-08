@@ -1,0 +1,33 @@
+.location{
+    color: red;
+    font-size:48px;
+}
+.location:hover{
+    cursor: pointer;
+}
+.park_popup{
+    padding: 5px;
+}
+.park_popup>h2{
+    border-bottom: 1px solid lightgray;
+    margin: 5px 0px;
+}
+.marker {
+    background-image: url(../Components/mapbox-icon.png);
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    /* z-index: 100; */
+}
+.mapboxgl-popup {
+    max-width: 300px;
+  }
+  
+  .mapboxgl-popup-content {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px;
+    /* margin: 10px; */
+  }

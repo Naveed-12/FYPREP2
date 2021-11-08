@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.SignInform{
+    width: 40%;
+    margin: auto;
+    margin-top: 30px;
+    border: 1px solid  lightgray;
+    background:#F7F7F7;
+    border-radius: 5px;
+    margin-bottom: 15px;
+
+}
+.form__logo{
+    text-align: center;
+    margin-right: 10px;
+    font-family: 'Bonheur Royale', cursive;
+    font-size: 45px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+
+}
+.text{
+    width: 50%;
+    margin: 20px;
+}
+#form{
+    margin: 20px;
+}
+.form__btn{
+    margin-left: 100px;
+}
+.btn{
+    width:30%;
+}
+.back{
+    padding-left: 100px;
+}
+.back:hover{
+    color: black;
+}

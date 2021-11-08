@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+}
+.dashboard__table{
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+}
+.dashbord_delete_btn{
+    font-size: medium;
+    font-family: 'Catamaran', sans-serif;
+    margin-top: 10px;
+    border: 0;
+    outline: none;
+    border: 1px solid red;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background: white;
+    font-weight: 600;
+}
+.dashbord_delete_btn:hover{
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border: 1px solid lightgray;
+}

@@ -1,0 +1,41 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Italianno&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-weight: normal;
+    font-family: 'Bonheur Royale', cursive;
+    color: white;
+}
+.dashboard__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid red; */
+    padding: 10px;
+    background: #0F9D58;
+    margin: 0 2px;
+    border-bottom: 1px lightgray;
+}
+.dashboard__right{
+    display: flex;
+    align-items: center;
+}
+.dashboard__logo{
+    margin-left: 80px;
+    font-weight: 600;
+    font-size:30px;
+    font-family: 'Bonheur Royale', cursive;
+}
+.dashboard__admin__logo,.dashboard__admin{
+    margin-right: 100px;
+}
+.dashboard__admin{
+    font-weight: 600;
+    font-size:30px;
+    font-family: 'Bonheur Royale', cursive;
+}
+.dashboard__admin__logo:hover{
+    cursor: pointer;
+}

@@ -1,126 +1,126 @@
-import React, { useEffect, useState } from 'react'
-import { useHistory } from 'react-router'
-import '../Style/SignIn.css'
-import { auth } from '../firebase/firebase'
-import PropTypes from 'prop-types';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Alert__Error from './Alert';
+import React, { useEffect, useState } from "react";
+import { useHistory, withRouter } from "react-router";
+import "../Style/SignIn.css";
+import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
+import Checkbox from "@mui/material/Checkbox";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import { FormGroup } from "@mui/material";
+import { Link } from "react-router-dom";
 
-
-function TabPanel(props) {
-    const { children, value, index, ...other } = props;
-
-    return (
-        <div
-            role="tabpanel"
-            hidden={value !== index}
-            id={`simple-tabpanel-${index}`}
-            aria-labelledby={`simple-tab-${index}`}
-            {...other}
-        >
-            {value === index && (
-                <Box sx={{ p: 3 }}>
-                    <Typography>{children}</Typography>
-                </Box>
-            )}
-        </div>
-    );
-}
-
-TabPanel.propTypes = {
-    children: PropTypes.node,
-    index: PropTypes.number.isRequired,
-    value: PropTypes.number.isRequired,
-};
-
-function a11yProps(index) {
-    return {
-        id: `simple-tab-${index}`,
-        'aria-controls': `simple-tabpanel-${index}`,
+class SignIn extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      user: {
+        Email: "",
+        Password: "",
+      },
     };
-}
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
 
+  handleChange = (event) => {
+    const { user } = this.state;
+    user[event.target.name] = event.target.value;
+    this.setState({ user });
+  };
 
-function SignIn() {
-const [value, setValue] = React.useState(0);
-    const history = useHistory();
-    const [Email, SetEmail] = useState('');
-    const [Password, SetPassword] = useState('');
-    const [modal,setmodal]=useState(false);
-    const AdminEmail = 'ibtisamakram111@gmail.com';
-    const AdminPass = '12345678910';
-    
-    const AdminSignIn = (event) => {
-        event.preventDefault();
-        document.getElementById('Admin-form').reset();
-        if (Email === AdminEmail && Password === AdminPass) {
-            history.push('/Dashboard');
-            return true
-        }
-        document.getElementById('alert').style.display='block'
-        setTimeout(()=>document.getElementById('alert').style.display='none',2000);
-        return false
-    }
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
-    const userSignIn = (event) => {
-        event.preventDefault();
-       
-    }
-
-    const createUser = (event) => {
-        event.preventDefault();
-        history.push('/SignInform')
-    }
+  handleSubmit = async (event) => {
+    const { user } = this.state; 
+    console.log("User is : ", user);
+    event.preventDefault();
+    const res = await fetch("http://localhost:5000/api/users/usersignin", {
+      method: "post",
+      body: JSON.stringify(user),
+      headers: { "Content-Type": "application/json" },
+    })
+    const data = await res.json();
+    if (res.status === 400 || !data) {
+      window.alert("InValid Data");
+    } 
+    else {
+      window.alert(data);
+      this.props.history.push("/home");
+    } 
+  }
+  signup = (e) => {
+    this.props.history.push("/SignInform");
+  };
+  render() {
+    const { user } = this.state;
     return (
-        <div className="Login">
-            <h2 className="SignIn__logo">Property Ticket</h2>
-            <div className="Login-container">
-                <h1>Sign-in</h1>
-                <Box sx={{ width: '100%' }}>
-                    <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-                            <Tab label="User" {...a11yProps(0)} />
-                            <Tab label="Admin" {...a11yProps(1)} />
-                        </Tabs>
-                    </Box>
-                    <TabPanel value={value} index={0}>
-                        <form onSubmit={userSignIn} id="user-form">
-                            <h5>E-mail</h5>
-                            <input type="text" name="email" required placeholder="xyz5@gmail.com" pattern=".+@gmail.com" onChange={e => SetEmail(e.target.value)}></input>
-                            <h5>Password</h5>
-                            <input type="password" name="pass" required onChange={e => SetPassword(e.target.value)}></input>
-                            <div id="alert" style={{display:'none'}}>
-                                <Alert__Error title="Enter Valid Email and Password!"/>
-                            </div>
-                            <button className="Login-button" type="submit">Sign in</button>
-                        </form>
-                        <p>Hispanic Heritage Month recognizes the contributions and influence of Hispanic Americans to the history</p>
-                        <div className="btn-create"><button onClick={createUser} id="create">Create your Account</button></div>
-                    </TabPanel>
-                    <TabPanel value={value} index={1}>
-                        <form onSubmit={AdminSignIn} id="Admin-form">
-                            <h5>E-mail</h5>
-                            <input type="text" name="email" required placeholder="xyz5@gmail.com" pattern=".+@gmail.com" onChange={e => SetEmail(e.target.value)}></input>
-                            <h5>Password</h5>
-                            <input type="password" name="pass" required onChange={e => SetPassword(e.target.value)}></input>
-                            <div id="alert" style={{display:'none'}}>
-                                <Alert__Error title="Enter Valid Email and Password!"/>
-                            </div>
-                            <button className="Login-button" type="submit" id="create1">Sign in</button>
-                        </form>
-                        <p>Hispanic Heritage Month recognizes the contributions and influence of Hispanic Americans to the history</p>
-                    </TabPanel>
-                </Box>
+      <div className="signin_container">
+        <div className="container1">
+          <div className="container1__img"></div>
+          <div className="container1__form">
+            <div className="new__acount">
+              <p className="new_account_signin">Sign in</p>
+              <p className="signup-history">
+                Don’t have a account{" "}
+                <span className="new_account_signup" onClick={this.signup}>
+                  {" "}
+                  Sign up
+                </span>
+              </p>
             </div>
+            <div className="fields">
+              <ValidatorForm
+                ref="form"
+                onSubmit={this.handleSubmit}
+                onError={(errors) => console.log(errors)}
+              >
+                <label className="field_label">Email</label>
+                <TextValidator
+                  // label="Email"
+                  onChange={this.handleChange}
+                  name="Email"
+                  value={user.Email}
+                  validators={["required", "isEmail"]}
+                  errorMessages={[
+                    "this field is required",
+                    "email is not valid",
+                  ]}
+                  size="small"
+                  margin="dense"
+                  fullWidth
+                />
+                <label className="field_label">Password</label>
+                <TextValidator
+                  // label="Password"
+                  onChange={this.handleChange}
+                  name="Password"
+                  value={user.Password}
+                  validators={["required"]}
+                  errorMessages={["this field is required"]}
+                  size="small"
+                  type="password"
+                  margin="dense"
+                  id="outlined-password-input"
+                  fullWidth
+                />
+                <div className="field_button">
+                  <button type="submit">Log in</button>
+                
+                  </div>
+                
+                <div className="checkinfo">
+                  <FormGroup>
+                    <FormControlLabel
+                      control={<Checkbox color="secondary" />}
+                      label="I agree to the terms and conditions"
+                    />
+                  </FormGroup>
+                </div>
+              </ValidatorForm>
+             <Link to= "adminlogin"><button type="submit" className = "adminloginbutton">Admin Login</button></Link> 
+               
+            </div>
+          </div>
         </div>
-
-    )
+      </div>
+    );
+  }
 }
 
-export default SignIn
-
+export default withRouter(SignIn);

@@ -1,17 +1,14 @@
-import Header from './Components/Header';
-import './App.css';
-import Dbody from './Components/Dbody';
-import SignIn from './Components/SignIn';
-import SignInform from './Components/form';
-import './firebase/firebase'
-import Home from './Components/Home';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
-import Map from './Components/Map'
-import Area_guide from './Components/Area_guide';
+import Header from "./Components/Header";
+import "./App.css";
+import Dbody from "./Components/Dbody";
+import SignIn from "./Components/SignIn";
+import SignInform from "./Components/form";
+import AdminLogin from "./Components/AdminSignin";
+import "./firebase/firebase";
+import Home from "./Components/Home";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Map from "./Components/Map";
+import Area_guide from "./Components/Area_guide";
 
 function App() {
   return (
@@ -19,7 +16,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-          <SignInform/>
+            <SignIn />
           </Route>
           <Route exact path="/SignInform">
             <SignInform />
@@ -34,11 +31,14 @@ function App() {
           <Route exact path="/signin">
             <SignIn />
           </Route>
+          <Route exact path="/adminlogin">
+            <AdminLogin />
+          </Route>
           <Route exact path="/Map">
             <Map />
           </Route>
-          <Route path='/areaguides'>
-            <Area_guide/>
+          <Route path="/areaguides">
+            <Area_guide />
           </Route>
         </Switch>
       </Router>

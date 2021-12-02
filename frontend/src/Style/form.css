@@ -2,8 +2,50 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    
 }
-.SignInform{
+
+.field1{
+    width: 70%;
+    background: white;
+    margin: auto;
+    height: 70%;
+    padding: 25px;
+    border-radius: 18px;
+}
+.text{
+    margin-top: 10px;
+    padding: 10px;
+}
+.field1_button{
+    width: 100%;
+}
+.field1_button>button{
+    width: 30%;
+    outline: none;
+    float: right;
+    background-color: #5CA1FF;
+    border-radius: 22px;
+    color: white;
+    border: none;
+    padding: 5px;
+    margin-right: 10px;
+}
+.field1_button>button:hover{
+    background:#2F78FF;
+}
+.new_account_signin{
+    margin-bottom: 0px;
+}
+.btn1-label{
+    display: flex;
+    align-items: center;
+}
+.btn1-span{
+    color: #2F78FF;
+    cursor: pointer;
+}
+/* .SignInform{
     width: 40%;
     margin: auto;
     margin-top: 30px;
@@ -11,7 +53,7 @@
     background:#F7F7F7;
     border-radius: 5px;
     margin-bottom: 15px;
-
+    
 }
 .form__logo{
     text-align: center;
@@ -20,7 +62,6 @@
     font-size: 45px;
     margin-top: 15px;
     margin-bottom: 20px;
-
 }
 .text{
     width: 50%;
@@ -34,10 +75,4 @@
 }
 .btn{
     width:30%;
-}
-.back{
-    padding-left: 100px;
-}
-.back:hover{
-    color: black;
-}
+} */

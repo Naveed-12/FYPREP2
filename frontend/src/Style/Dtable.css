@@ -15,15 +15,56 @@
     margin-top: 10px;
     border: 0;
     outline: none;
-    border: 1px solid red;
-    padding: 5px 10px;
+    /* border: 1px solid red; */
+    /* padding: 5px 10px; */
     border-radius: 10px;
     background: white;
     font-weight: 600;
 }
+.green{
+    color:green;
+    font-size: 15px;
+}
+.red{
+    color:red;
+    font-size: 15px;
+
+}
+.dashbord_approve_btn{
+    font-size: 15px;
+    font-family: 'Catamaran', sans-serif;
+    margin-top: 10px;
+    border: 0;
+    outline: none;
+    /* border: 1px solid blue; */
+    /* padding: 5px 10px; */
+    border-radius: 10px;
+    background: white;
+    font-weight: 600;
+}
+.dashbord_edit_btn{
+    font-size: medium;
+    font-family: 'Catamaran', sans-serif;
+    margin-top: 10px;
+    border: 0;
+    outline: none;
+    /* border: 1px solid red; */
+    /* padding: 5px 10px; */
+    border-radius: 10px;
+    background: white;
+    font-weight: 600;
+}
+.dashbord_edit_btn:hover{
+    cursor: pointer;
+    color: green;
+}
+.dashbord_approve_btn:hover{
+    cursor: pointer;
+    /* background-color: blue; */
+    color: blue;
+}
 .dashbord_delete_btn:hover{
     cursor: pointer;
-    background-color: red;
-    color: white;
-    border: 1px solid lightgray;
+    /* background-color: red; */
+    color: red;
 }

@@ -21,6 +21,10 @@ const newUser = new mongoose.Schema({
     },
     Contact:{
         type:String
+    },
+    Status:{
+        type:Boolean,
+        default:true
     }
 })
 newUser.pre('save',async function(next){

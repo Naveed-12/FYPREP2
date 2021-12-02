@@ -20,7 +20,7 @@ export default class Home extends Component {
                 <p className="para">Invest in the Future you believe in</p>
               </h1>
               <ul className="ul">
-                <Link className="Link" to="/">
+                <Link className="Link" to="/home">
                   <li className="li">Home</li>
                 </Link>
                 <Link className="Link" to="/areaguides">
@@ -30,7 +30,7 @@ export default class Home extends Component {
                   <li className="li">Aboutus</li>
                 </Link>
                 <Link className="Link" to="/signin">
-                  <li className="li">SignIn</li>
+                  <li className="li">LogOut</li>
                 </Link>
               </ul>
               <div className="para2">

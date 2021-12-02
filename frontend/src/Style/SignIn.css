@@ -1,75 +1,114 @@
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Catamaran', sans-serif;
-    font-weight: 600;
-}
-.SignIn__logo{
-    text-align: center;
-    margin-right: 10px;
-    font-family: 'Bonheur Royale', cursive;
-    font-size: 45px;
-    margin-top: 50px;
-    margin-bottom: 20px;
+    /* font-family: 'Catamaran', sans-serif; */
+    font-family: Merriweather;
+    color: black;
 
 }
+ 
 
-form>input{
-    width: 100%;
-    height: 25px;
+
+.signin_container{
+     width: 100vw;
+     height:100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    background: linear-gradient(180deg, #EAF7FF 0%, #E5F4FF 95.31%);
 }
-form>button{
+.container1{
+    width: 70%;
+    height: 600px;
+    background: linear-gradient(180deg, #EAF7FF 0%, #E5F4FF 95.31%);
+   display: flex;
+   z-index: 1;
+
+}
+.container1__img{
     width: 100%;
+    height: 100%;
+     background-image: url('../images/house.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+.container1__form{
+    width: 100%;
+    height: 100%;
+}
+.fields{
+    width: 70%;
+    background: white;
+    margin: auto;
+    height: 75%;
+    padding: 25px;
+    border-radius: 18px;
+}
+.field_button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.field_button>button{
+    width: 30%;
+    outline: none;
+    background-color: #5CA1FF;
+    border-radius: 22px;
+    color: white;
+    border: none;
     padding: 5px;
 }
-.btn-create{
-    width: 100%;
+.field_button>button:hover{
+    background:#2F78FF;
 }
-.btn-create>button{
-    width: 100%;
-    padding: 5px;
+.new__acount{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    margin-top:10px;
 }
-.Login-container>button,.toggle>button{
-    width: 100%;
-    padding: 5px;
+.checkinfo{
+     margin-top: 20%;
+     display: flex;
+     justify-content: center;
 }
-.Login-container{
-    width: 350px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 15px;
-    z-index: 1;
-    border: 1px solid lightgray;
-    border-radius: 5px;
+.signup-history{
+    margin-top: 10px;
 }
-.Login-container>p{
-    width: 100%;
-    font-weight: normal;
-    padding-left: 27px;
-}
-.Login-container>h1,h5,input,button,p{
-    margin: 3px;
-}
-.Login-container>h1{
-    margin-left: 18px;
-}
-.Login-button{
-    border-color: rgb(241, 105, 56);
-    background: rgb(243, 133, 54);
-}
-button:hover{
+.new_account_signup{
+    color:#2F78FF;
     cursor: pointer;
-    border: 2px solid;
+
 }
-.admin__label,.admin__radio{
-    margin: 0;
-    padding: 0;
-    width: auto;
+.new_account_signin{
+    font-size: 30px;
+    font-weight: 600;
+    font-family: Playfair Display;
+    margin-bottom: 0px;
 }
-.admin__radio{
-    height: 15px;
-    width: 15px;
-    margin-left: 15px;
+.signup-history{
+    /* margin-bottom: 0px; */
+    padding-top: 10px;
+}
+.field_label{
+    display: flex;
+    justify-content: left;
+}
+.adminloginbutton{
+    background-color: rgb(235, 77, 77);
+    padding-left:20px ;
+    padding-right: 20px;
+    padding-top: 5px;
+    border-radius: 15px;
+    border:none;
+    padding-bottom: 5px;
+    color: white;
+}
+.adminloginbutton:hover{
+    background-color: red;
 }

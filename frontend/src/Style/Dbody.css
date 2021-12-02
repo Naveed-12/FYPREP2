@@ -36,3 +36,12 @@
     font-family: 'Catamaran', sans-serif;
     font-size: large;
 }
+.bold{
+    font-size: 20px;
+    font-style: oblique;
+}
+.users{
+    font-size: 40px;
+    font-style: oblique;
+    font-weight: 600;
+}

@@ -7,10 +7,10 @@ function Nav() {
         <div className='Home_header'>
             <Link className = "Link" to = "/"><h1 className = "Title">Property Ticket</h1></Link>
                 <ul className = "home_header_ul">
-                    <Link className = "Link"  to = "/"><li className = "home_header_li">Home</li></Link>
+                    <Link className = "Link"  to = "/home"><li className = "home_header_li">Home</li></Link>
                     <Link className = "Link"  to = "/areaguides"><li className = "home_header_li">AreaGuide</li></Link>
                     <Link className = "Link"  to = "/aboutus"><li className = "home_header_li">AboutUs</li></Link>
-                    <Link  className = "Link" to = "/signin"><li className = "home_header_li">SignIn</li></Link>
+                    <Link  className = "Link" to = "/"><li className = "home_header_li">LogOut</li></Link>
                 </ul>           
         </div>
     )

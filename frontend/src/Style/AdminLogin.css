@@ -1,0 +1,98 @@
+ 
+.ibsignin_container{
+     width: 100vw;
+     height:100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     /* background: #E5E5E5 */
+     background: rgb(234,247,255);
+     background: linear-gradient(90deg, rgba(234,247,255,1) 21%, rgba(66,73,83,1) 50%);
+ 
+}
+.ibcontainer1{
+    width: 70%;
+    height: 600px;
+    /* background: linear-gradient(180deg, #EAF7FF 0%, #E5F4FF 95.31%); */
+    background: linear-gradient(90deg, rgba(234,247,255,1) 21%, rgba(137,142,148,1) 50%);
+    display: flex;
+   z-index: 1;
+
+}
+.ibcontainer1__img{
+    width: 100%;
+    height: 100%;
+     background-image: url('../images/Admin.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.ibcontainer1__form{
+    width: 100%;
+    height: 100%;
+}
+.ibfields{
+    width: 70%;
+    background: white;
+    margin: auto;
+    height: 70%;
+    padding: 35px;
+    border-radius: 18px;
+    margin-right: 150px;
+    margin-top: 25px;
+    border-style:dotted;
+    border: 1px;
+    border-color: lightgray;
+}
+.ibfield_button{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin-top: 10px;
+}
+.ibfield_button>button{
+    width: 30%;
+    outline: none;
+    background-color: #5CA1FF;
+    border-radius: 22px;
+    color: white;
+    border: none;
+    padding: 5px;
+    margin-right: 10xp;
+}
+.ibfield_button>button:hover{
+    background:#2F78FF;
+}
+.ibnew__acount{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    margin-bottom: -20px;
+    margin-left: 15px;
+    /* margin: auto; */
+    /* margin-top:10px; */
+}
+.ibcheckinfo{
+     margin-top: 20%;
+     display: flex;
+     justify-content: center;
+}
+.ibsignup-history{
+    margin-top: 10px;
+}
+.ibnew_account_signup{
+    color:#2F78FF;
+    cursor: pointer;
+
+}
+.ibnew_account_signin{
+    font-size: 30px;
+    font-weight: 600;
+    font-family: Playfair Display;
+    margin-bottom: 0px;
+    margin-top: 35px;
+    color: white;
+}
+.ibsignup-history{
+    /* margin-bottom: 0px; */
+    padding-top: 10px;
+}
